@@ -9,9 +9,11 @@ interface Owner {
   description: string;
 }
 
-interface Field {
+export interface Field {
+  id: number;
   name: string;
   description: string;
+  editable?: boolean;
 }
 
 export interface Dataset {

@@ -59,7 +59,7 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       env: {
-        API: process.env.API_URL ? process.env.API_URL : 'http://localhost:8000',
+        API: process.env.API_URL ? process.env.API_URL : 'api/',
         LOC: process.env.LOCALE ? process.env.LOCALE : 'en-US'
       },
       // transpile: false,
@@ -95,7 +95,9 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-framework
     framework: {
-      config: {},
+      config: {
+        notify: {}
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       lang: process.env.LOCALE ? process.env.LOCALE : 'en-US', // Quasar language pack
@@ -108,7 +110,9 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
@@ -117,7 +121,7 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr
     ssr: {
-      pwa: false,
+      pwa: true,
 
       // manualStoreHydration: true,
       // manualPostHydrationTrigger: true,
