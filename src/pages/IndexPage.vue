@@ -60,7 +60,7 @@ export default defineComponent({
     const active = ref(0);
     function loadData() {
       api
-        .get('/catalog/')
+        .get('/catalog/dataset/')
         .then((response: AxiosResponse<Array<Dataset>>) => {
           console.log(response.data);
           datasources.value = response.data.sort((a: Dataset, b: Dataset) => {
@@ -69,6 +69,7 @@ export default defineComponent({
             }
             return a.owner.id < b.owner.id ? -1 : 1;
           });
+          datasources.value.forEach((dataset) => {dataset.fields.forEach((field) => field.editable = false)})
         })
         .catch(() => {
           $q.notify({
