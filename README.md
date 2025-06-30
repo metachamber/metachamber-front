@@ -1,41 +1,23 @@
-# Merachamber (metachamber-front)
+# MetaChamber Frontend
 
-Simple Metadata Discovery
+Vue.js/Quasar web application for metadata discovery platform.
 
-## Install the dependencies
+## Setup
+
 ```bash
-yarn
-# or
+# Install dependencies
 npm install
-```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
+# Start development server  
 quasar dev
-```
 
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
+# Build for production
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+## Docker
+
+```bash
+docker build -t metachamber-frontend .
+docker run -p 3000:3000 metachamber-frontend
+```

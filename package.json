@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Simple Metadata Discovery",
   "productName": "Merachamber",
-  "author": "Iman Gholami <imangholami77@gmail.com>",
+  "author": "MetaChamber Team",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
